@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import Home from './components/shared/home/Home';
 import Nomatch from './components/shared/Nomatch';
 import MainNavbar from './components/shared/MainNavbar';
@@ -11,6 +12,7 @@ import DoctorShow from './components/doctors/DoctorShow';
 const App = () => (
   <>
     <MainNavbar />
+    <Routes>
     <Route path='/' element={<Home />} />
     <Route path='/users' element={<Users />} />
     <Route path='/users/:id' element={<UserShow />} />
@@ -18,6 +20,7 @@ const App = () => (
     <Route path='/doctors/:id' element={<DoctorShow />} />
     {/* <Route path='/:courseId/appointments' element={ <Appointments /> } /> */}
     <Route path='/*' element={<Nomatch />} />
+    </Routes>
     <Footer />
   </>
 )
