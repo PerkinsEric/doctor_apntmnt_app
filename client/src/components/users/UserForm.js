@@ -17,7 +17,7 @@ const UserForm = ({ addUser, id, first_name, last_name, age, gender, phone_numbe
     } else {
       addUser(user)
     }
-    setWorker({ first_name: '', last_name: '', age: '', gender: '', phone_number: '' })
+    setUser({ first_name: '', last_name: '', age: '', gender: '', phone_number: '' })
   }
 
   return (

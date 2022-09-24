@@ -24,4 +24,4 @@ const DoctorList = ({ doctors }) => (
   </Container>
 )
 
-export default CourseList;
+export default DoctorList;
