@@ -39,23 +39,16 @@ const UserForm = ({ addUser, id, first_name, last_name, age, gender, phone_numbe
           placeholder='Last name'
         ></textarea>
         <textarea
-          name='phone_number'
-          value={user.phone_number}
-          onChange={(e) => setUser({ ...user, last_name: e.target.value })}
-          required
-          placeholder='Phone#'
-        ></textarea>
-        <textarea
           name='age'
           value={user.age}
-          onChange={(e) => setUser({ ...user, position: e.target.value })}
+          onChange={(e) => setUser({ ...user, age: e.target.value })}
           required
           placeholder='Age'
         ></textarea>
         <select
           name='gender'
-          value={user.age}
-          onChange={(e) => setUser({ ...user, position: e.target.value })}
+          value={user.gender}
+          onChange={(e) => setUser({ ...user, gender: e.target.value })}
           required
           placeholder='Gender'
         >
@@ -63,6 +56,13 @@ const UserForm = ({ addUser, id, first_name, last_name, age, gender, phone_numbe
           <option value="Female">Female</option>
           <option value="Other">Other</option>
         </select>
+        <textarea
+          name='phone_number'
+          value={user.phone_number}
+          onChange={(e) => setUser({ ...user, phone_number: e.target.value })}
+          required
+          placeholder='Phone#'
+        ></textarea>
         <button type='submit'>Submit</button>
       </form>
     </>
