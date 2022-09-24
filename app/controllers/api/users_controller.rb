@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  before_action :set_list, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:show, :update, :destroy]
   
   # model name -> user
   def index
