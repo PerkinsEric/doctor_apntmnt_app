@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const Nomatch = () => (
+const NoMatch = () => (
   <>
     <h1>404 page not found</h1>
     <Link to='/'>
@@ -9,4 +9,4 @@ const Nomatch = () => (
   </>
 )
 
-export default Nomatch;
+export default NoMatch;

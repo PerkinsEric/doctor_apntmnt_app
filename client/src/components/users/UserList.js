@@ -1,6 +1,6 @@
 import UserShow from './UserShow';
 
-const AllUser = ({ users, updateUser, deleteUser }) => (
+const UserList = ({ users, updateUser, deleteUser }) => (
   <>
     {
       users.map( u => 
@@ -16,4 +16,4 @@ const AllUser = ({ users, updateUser, deleteUser }) => (
   </>
 )
 
-export default AllUser;
+export default UserList;

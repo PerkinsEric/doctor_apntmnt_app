@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import UserForm from './WorkerForm';
+import UserForm from './UserForm';
 import { Link } from 'react-router-dom';
 
-const UserShow = ({ id, first_name, last_name, age, gender, phone_number, updateWorker, deleteWorker }) => {
+const UserShow = ({ id, first_name, last_name, age, gender, phone_number, updateUser, deleteUser }) => {
   const [editing, setEdit] = useState(false)
 
   return (

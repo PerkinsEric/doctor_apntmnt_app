@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/shared/home/Home';
-import Nomatch from './components/shared/Nomatch';
+import NoMatch from './components/shared/NoMatch';
 import MainNavbar from './components/shared/MainNavbar';
 import Footer from './components/shared/Footer';
 import Users from './components/users/Users';
@@ -14,13 +14,13 @@ const App = () => (
     <MainNavbar />
     <Routes>
 
-    <Route path='/' element={ <Home /> } />
+      <Route path='/' element={ <Home /> } />
       <Route path='/users' element={ <Users /> } />
       <Route path='/users/:id' element={ <UserShow /> } />
       <Route path='/doctors' element={ <Doctors /> } />
       <Route path='/doctors/:id' element={ <DoctorShow /> } />
       {/* <Route path='/:courseId/appointments' element={ <Appointments /> } /> */}
-      <Route path='/*' element={ <Nomatch /> } />
+      <Route path='/*' element={ <NoMatch /> } />
 
     </Routes>
     <Footer />

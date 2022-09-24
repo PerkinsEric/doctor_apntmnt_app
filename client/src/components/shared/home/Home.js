@@ -1,6 +1,6 @@
 const Home = () => (
     <>
-      <h1>Home Handy Man</h1>
+      <h1>Doctor Appointments</h1>
     </>
   )
   
