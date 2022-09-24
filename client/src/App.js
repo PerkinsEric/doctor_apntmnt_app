@@ -13,16 +13,21 @@ const App = () => (
   <>
     <MainNavbar />
     <Routes>
-      <Route path='/' element={ <Home /> } />
+
+    <Route path='/' element={ <Home /> } />
       <Route path='/users' element={ <Users /> } />
       <Route path='/users/:id' element={ <UserShow /> } />
       <Route path='/doctors' element={ <Doctors /> } />
       <Route path='/doctors/:id' element={ <DoctorShow /> } />
       {/* <Route path='/:courseId/appointments' element={ <Appointments /> } /> */}
       <Route path='/*' element={ <Nomatch /> } />
+
     </Routes>
     <Footer />
   </>
 )
+
+export default App;
+
 
 export default App;
