@@ -1,0 +1,2 @@
+class Appontment < ApplicationRecord
+end

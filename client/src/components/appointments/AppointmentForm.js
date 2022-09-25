@@ -13,7 +13,7 @@ const AppointmentForm = ({ addAppointment, setAdd, unappointedUsers, id, user_id
   const handleSubmit = (e) => {
     e.preventDefault()
     if (id) {
-      updateAppoinment(id, appointment)
+      updateAppointment(id, appointment)
       setEdit(false)
     } else {
       addAppointment(appointment)
@@ -30,10 +30,10 @@ const AppointmentForm = ({ addAppointment, setAdd, unappointedUsers, id, user_id
           <Form.Select
             name='user_id'
             value={appointment.user_id}
-            onChange={(e) => setAppiontment({...appointment, user_id: parseInt(e.target.value) })}
+            onChange={(e) => setAppointment({...appointment, user_id: parseInt(e.target.value) })}
             required
           >
-            <option>Choose an user</option>
+            <option>Choose a user</option>
             { unappointedUsers.map( u => 
               <option value={u.id} key={u.id}>
                 {u.first_name} {u.last_name}

@@ -1,7 +1,7 @@
 import { Container, ListGroup } from 'react-bootstrap';
 import AppointmentShow from './AppointmentShow';
 
-const AppointmentList = ({ appoinments, updateAppoinment, unappointededUsers }) => (
+const AppointmentList = ({ appointments, updateAppointment, unappointedUsers }) => (
   <Container>
     <ListGroup variant="flush">
       { appointments.map( e => 
