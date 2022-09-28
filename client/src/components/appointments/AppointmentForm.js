@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-const AppointmentForm = ({ addAppointment, setAdd, unappointedUsers, id, user_id, updateAppointment, setEdit }) => {
+const AppointmentForm = ({ addAppointment, setAdd, unappointedUsers, id, user_id, updateAppointment, setEdit, doctorId}) => {
   const [appointment, setAppointment] = useState({ user_id: 0 })
 
   useEffect( () => {
@@ -13,10 +13,10 @@ const AppointmentForm = ({ addAppointment, setAdd, unappointedUsers, id, user_id
   const handleSubmit = (e) => {
     e.preventDefault()
     if (id) {
-      updateAppointment(id, appointment)
+      updateAppointment(doctorId, id, appointment)
       setEdit(false)
     } else {
-      addAppointment(appointment)
+      addAppointment(doctorId, appointment)
       setAdd(false)
     }
     setAppointment({ user_id: 0 })

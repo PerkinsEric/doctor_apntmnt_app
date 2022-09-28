@@ -4,9 +4,9 @@ import { ListGroup, Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import AppointForm from './AppointmentForm';
 
-const AppointmentShow = ({ id, course_id, user_id, updateAppointment, unappointedUsers }) => {
+const AppointmentShow = ({ id, doctor_id, user_id, updateAppointment, unappointedUsers }) => {
   const [user, setUser] = useState({ first_name: '' , last_name: '' })
-  const { courseId } = useParams()
+  const { doctorId } = useParams()
   const [editing, setEdit] = useState(false)
 
   useEffect( () => {
@@ -27,6 +27,7 @@ const AppointmentShow = ({ id, course_id, user_id, updateAppointment, unappointe
             updateAppointment={updateAppointment}
             setEdit={setEdit}
             unappointededUsers={unappointedUsers}
+            doctorId={doctorId}
           />
           <Button 
             variant='warning'

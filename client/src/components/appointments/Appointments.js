@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { Modal, Button } from 'react-bootstrap';
 import AppointmentForm from '.appoinments/ApppointmentForm';
 
-const Appointments = ({}) => {
+const Appointments = ({ getAllAppointments, getAllUnappointedUsers, unappointedUsers, appointments }) => {
   const { appointmentId } = useParams()
   const [appointments, setAppointments] = useState([])
   const location = useLocation()
