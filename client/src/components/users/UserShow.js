@@ -1,50 +1,81 @@
-import { useState } from 'react';
-import UserForm from './UserForm';
-import { Link } from 'react-router-dom';
+import { useParams } from "react-router-dom";
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { Image, Button } from "react-bootstrap";
+//import AppointmentList from '../appointments/AppontmentList';
+import { UserConsumer } from "../../providers/UserProvider";
+import UserForm from "./UserForm";
 
-const UserShow = ({ id, first_name, last_name, age, gender, phone_number, updateUser, deleteUser }) => {
+const UserShow = ({ updateUser, deleteUser }) => {
+  const [user, setUser] = useState({ first_name: '', last_name: '', age: '', gender: '', phone_number: '' })
+  const { id } = useParams()
+  const [userCourses, setUserCourses] = useState([])
   const [editing, setEdit] = useState(false)
 
+  useEffect( () => {
+    axios.get(`/api/users/${id}`)
+      .then( res => setUser(res.data) )
+      .catch( err => console.log(err) )
+
+    axios.get(`/api/${id}/userAppontments`)
+      .then( res => setUserCourses(res.data) )
+      .catch( err => console.log(err) )
+  }, [])
+
+  const { first_name, last_name, age, gender, phone_number } = user
   return (
     <>
       { editing ?
         <>
-          <UserForm 
-            updateUser={updateUser}
+          <UserForm
             id={id}
             first_name={first_name}
             last_name={last_name}
             age={age}
             gender={gender}
             phone_number={phone_number}
+            updateUser={updateUser}
             setEdit={setEdit}
           />
-          <button onClick={() => setEdit(false)}>
+          <Button 
+            variant="warning"
+            onClick={() => setEdit(false)}
+          >
             Cancel
-          </button>
+          </Button>
         </>
         :
-        <div>
-          <h1> {first_name} {last_name} {age} {gender} {phone_number}</h1>
-          <button onClick={() => setEdit(true)}>
-            Edit
-          </button>
-          <button onClick={() => deleteUser(id)}>
-            Delete
-          </button>
-          <Link
-            to={`/${id}/appointments`} //path of where its going to 
-            // id the list id
-            state={{ First_name: first_name, Last_Name: last_name, Age: age, Gender: gender, Phone_number: phone_number }}
-            // state only read only value to pass to the page
+        <>
+          <h1>{first_name} {last_name} {age} {gender} {phone_number}</h1>
+          <Image 
+            alt={first_name}
+            width='300'
+          />
+          <Button 
+            variant="warning"
+            onClick={() => setEdit(true)}
           >
-            <button>Appointments</button>
-          </Link>
-        </div>
+            Edit
+          </Button>
+          <Button 
+            variant="danger"
+            onClick={() => deleteUser(id)}
+          >
+            Delete
+          </Button>
+          <br />
+          <h1>All appoinments set for user</h1>
+          {/*<AppointmentList courses={userAppointments} />*/}
+        </>
       }
-      <hr />
     </>
   )
 }
 
-export default UserShow;
+const ConnectedUserShow = (props) => (
+  <UserConsumer>
+    { value => <UserShow {...value} {...props} />}
+  </UserConsumer>
+)
+
+export default ConnectedUserShow;
