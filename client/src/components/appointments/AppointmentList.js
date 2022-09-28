@@ -4,10 +4,10 @@ import AppointmentShow from './AppointmentShow';
 const AppointmentList = ({ appointments, updateAppointment, unappointedUsers }) => (
   <Container>
     <ListGroup variant="flush">
-      { appointments.map( e => 
+      { appointments.map( a => 
         <AppointmentShow 
-          key={e.id}
-          {...e}
+          key={a.id}
+          {...a}
           updateAppointment={updateAppointment}
           unappointedUsers={unappointedUsers}
         />

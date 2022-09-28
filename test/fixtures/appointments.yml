@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stime: 2022-09-27 19:41:44
+  sdate: 2022-09-27 19:41:44
+  desc: MyText
+  user: one
+  doctor: one
+
+two:
+  stime: 2022-09-27 19:41:44
+  sdate: 2022-09-27 19:41:44
+  desc: MyText
+  user: two
+  doctor: two

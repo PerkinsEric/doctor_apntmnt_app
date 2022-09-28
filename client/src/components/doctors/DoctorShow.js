@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import UserList from '../users/UserList';
 
-const DoctorShow = ({}) => {
+const DoctorShow = ({ updateDoctor, deleteDoctor}) => {
   const { id } = useParams()
   const [doctor, setDoctor] = useState({ first_name: '', last_name: '', specialty: '' })
   const [doctorUsers, setDoctorUsers] = useState([])

@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './components/shared/home/Home';
 import NoMatch from './components/shared/NoMatch';
 import MainNavbar from './components/shared/MainNavbar';
-import Footer from './components/shared/Footer';
+// import Footer from './components/shared/Footer';
 import Users from './components/users/Users';
 import Doctors from './components/doctors/Doctors';
 import DoctorShow from './components/doctors/DoctorShow';
@@ -21,7 +21,6 @@ const App = () => (
       <Route path='/*' element={ <NoMatch /> } />
 
     </Routes>
-    <Footer />
   </>
 )
 
